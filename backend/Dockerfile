@@ -1,9 +1,8 @@
-FROM gcc:latest
+FROM python:3.11-slim
 
 WORKDIR /app
-COPY app.cpp .
-RUN g++ app.cpp -o app
+COPY app.py .
 
 EXPOSE 8080
 
-CMD ["./app"]
+CMD ["python", "app.py"]
